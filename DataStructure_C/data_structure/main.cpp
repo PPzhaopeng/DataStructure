@@ -1,11 +1,13 @@
 #include <stdlib.h>
-#include "test.h"
-
+#include "LinkList.h"
+#include "SequenceList.h"
+#include "SequenceStack.h"
+#include "LinkStack.h"
 
 void main()
 {
-	SequenceList_test();
-	//LinkList_test();
+	SequenceListTest();
+	//LinkListTest();
 	system("pause");
 }
 

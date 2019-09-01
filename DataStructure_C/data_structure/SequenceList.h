@@ -16,9 +16,10 @@ typedef int ElemType; //ElemType 数据类型根据实际情况而定，这里假设为 int
 
 typedef struct 
 {
-	ElemType data[MAXSIZE];//数组存储数据元素
-	int length;//线性表当前长度
+	ElemType data[MAXSIZE];	//数组存储数据元素
+	int length;				//线性表当前长度
 }SqList;
 
 Status ListInsert(SqList *L, int i, ElemType e);
 Status ListDelete(SqList *L, int i, ElemType *e);
+void SequenceListTest();

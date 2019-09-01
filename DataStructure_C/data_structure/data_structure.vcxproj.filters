@@ -21,10 +21,13 @@
     <ClCompile Include="LinkList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="SequenceList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SequenceList.cpp">
+    <ClCompile Include="SequenceStack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +35,13 @@
     <ClInclude Include="LinkList.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="test.h">
+    <ClInclude Include="SequenceList.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SequenceList.h">
+    <ClInclude Include="SequenceStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkStack.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

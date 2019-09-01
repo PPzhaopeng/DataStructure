@@ -1,6 +1,7 @@
 #include "SequenceList.h"
 #include <stdlib.h>
-
+#include <iostream>
+using namespace std;
 //获得数据元素操作
 Status GetElm(SqList L, int i, ElemType *e)
 {
@@ -49,3 +50,25 @@ Status ListDelete(SqList *L, int i, ElemType *e)
 		return OK;
 	}
 }
+
+
+
+void SequenceListTest()
+{
+	SqList L = { 0,0 };//结构体数组初始化
+
+	for (int i = 1; i < 5; i++)
+	{
+		ListInsert(&L, 1, i);
+	}
+	int *e = (int*)malloc(sizeof(int));
+	ListDelete(&L, 3, e);
+	cout << L.length << endl;
+	for (int i = 0; i < L.length; i++)
+	{
+		cout << L.data[i] << " ";
+	}
+	cout << endl;
+
+}
+

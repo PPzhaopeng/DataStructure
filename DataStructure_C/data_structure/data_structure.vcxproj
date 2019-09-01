@@ -116,14 +116,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LinkList.cpp" />
+    <ClCompile Include="LinkStack.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SequenceList.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="SequenceStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="LinkStack.h" />
     <ClInclude Include="SequenceList.h" />
-    <ClInclude Include="test.h" />
+    <ClInclude Include="SequenceStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

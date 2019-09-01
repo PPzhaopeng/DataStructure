@@ -40,3 +40,4 @@ Status ListDelete(LinkList *L, int i, ElemType *e);
 void CreateListHead(LinkList *L, int n);
 void CreateListTail(LinkList *L, int n);
 Status ClearList(LinkList *L);
+void LinkListTest();

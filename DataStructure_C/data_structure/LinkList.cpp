@@ -1,3 +1,4 @@
+#include "Parameter.h"
 #include "LinkList.h"
 #include "stdlib.h"
 #include "time.h"
@@ -35,8 +36,8 @@ Status GetElem(LinkList L, int i, ElemType *e)
 1.声明一个指针p指向链表头结点，初始化j从1开始；
 2.当j<i时，就遍历列表，让p的指针向后移动，不断指向下一结点，j累加1；
 3.若到链表末尾p为空，则说明第i个结点不存在;
-4.否则查找成功，早系统中生成一个空结点s;
-5.将书元素e赋值给s->data;
+4.否则查找成功，在系统中生成一个空结点s;
+5.将元素e赋值给s->data;
 6.单链表的插入标准语句s->next=p->next,p->next=s;
 7.返回成功。
 注：LinkList *L 为二级指针 
@@ -150,7 +151,7 @@ void CreateListTail(LinkList *L, int n)
 	LinkList p, r;
 	int i;
 	srand(time(0));
-	//*L = (LinkList)malloc(sizeof(Node));
+	*L = (LinkList)malloc(sizeof(Node));
 	r = *L;
 	for (i = 0; i < n; i++)
 	{

@@ -1,7 +1,3 @@
-﻿  LinkList.cpp
-c:\users\zhaopeng\source\repos\data_structure\data_structure\linklist.cpp(124): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-c:\users\zhaopeng\source\repos\data_structure\data_structure\linklist.cpp(152): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-  main.cpp
-c:\users\zhaopeng\source\repos\data_structure\data_structure\main.cpp(7): warning C4326: “main”的返回类型应为“int”而非“void”
-  正在生成代码...
-  data_structure.vcxproj -> C:\Users\zhaopeng\source\repos\data_structure\Debug\data_structure.exe
+﻿  main.cpp
+e:\赵鹏\local-repositories\datastructure\datastructure_c\data_structure\main.cpp(6): warning C4326: “main”的返回类型应为“int”而非“void”
+  data_structure.vcxproj -> E:\赵鹏\local-repositories\DataStructure\DataStructure_C\Debug\data_structure.exe

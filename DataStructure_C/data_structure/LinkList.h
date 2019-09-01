@@ -16,7 +16,13 @@
 	LinkList p1; 定义一个结构体指针变量，存储结点地址,等同于struct Node *p1;
 	p1表示结点的地址，*p1表示结点，比如(*p1).data,(*p1).next,其中next也是表示地址
 ****************************************************************************/
+#define OK 1
+#define ERROR 0
+#define TRUE 1
+#define FALSE 0
 
+typedef int ElemType;	/*ElemType数据类型根据情况而定，这里默认为int类型*/
+typedef int Status;		/*类型重定义*/
 
 /*线性表的单链表存储结构*/
 typedef struct Node

@@ -1,9 +1,29 @@
 #include "test.h"
 #include <stdlib.h>
-#include "Parameter.h"
 #include "LinkList.h"
+#include "SequenceList.h"
 #include <iostream>
 using namespace std;
+
+void SequenceList_test()
+{
+	SqList L = {0,0};//结构体数组初始化
+
+	for (int i = 1; i < 5; i++)
+	{
+		ListInsert(&L, 1, i);
+	}
+	int *e = (int*)malloc(sizeof(int));
+	ListDelete(&L, 3, e);
+	cout << L.length << endl;
+	for (int i = 0; i < L.length; i++)
+	{
+		cout << L.data[i] << " ";
+	}
+	cout << endl;
+
+}
+
 
 //使用单链表建立一个线性表，依次输入十个0-99之间的随机数，
 //删除第5个元素，打印输出该线性表。
@@ -31,6 +51,4 @@ void LinkList_test()
 		p = p->next;
 	}
 	cout << endl;
-
-	system("pause");
 }

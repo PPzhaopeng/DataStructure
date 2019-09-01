@@ -117,11 +117,12 @@
   <ItemGroup>
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SequenceList.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkList.h" />
-    <ClInclude Include="Parameter.h" />
+    <ClInclude Include="SequenceList.h" />
     <ClInclude Include="test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

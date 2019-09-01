@@ -1,8 +1,11 @@
+#include <stdlib.h>
 #include "test.h"
 
 
 void main()
 {
-	LinkList_test();
+	SequenceList_test();
+	//LinkList_test();
+	system("pause");
 }
 

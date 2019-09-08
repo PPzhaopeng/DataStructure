@@ -115,16 +115,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CirSequenceQueueApplication.cpp" />
     <ClCompile Include="LinkList.cpp" />
+    <ClCompile Include="LinkQueue.cpp" />
     <ClCompile Include="LinkStack.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SequenceList.cpp" />
+    <ClCompile Include="CirSequenceQueue.cpp" />
     <ClCompile Include="SequenceStack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CirSequenceQueueApplication.h" />
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="LinkQueue.h" />
     <ClInclude Include="LinkStack.h" />
     <ClInclude Include="SequenceList.h" />
+    <ClInclude Include="CirSequenceQueue.h" />
     <ClInclude Include="SequenceStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

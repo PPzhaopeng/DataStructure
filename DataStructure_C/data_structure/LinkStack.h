@@ -3,14 +3,14 @@
 #define ERROR 0
 #define TRUE 1
 #define FALSE 0
-#define MAXSIZE 20
+
 typedef int Status;		//Status 数据类型根据实际情况而定，这里假设为 int
 typedef int SElemType;	//SElemType 数据类型根据实际情况而定，这里假设为 int
 
 typedef struct StackNode
 {
-	SElemType data;
-	struct StackNode *next;
+	SElemType data;				//数据
+	struct StackNode *next;		//下一个数据的地址
 }StackNode, *LinkStackPtr/*等于typedef struct StackNode *LinkStackPtr*/;
 
 typedef struct LinkStack
@@ -21,4 +21,5 @@ typedef struct LinkStack
 
 Status StackEmpty(LinkStack S);
 Status Push(LinkStack *S, SElemType e);
-Status Pop(LinkStack *S, SElemType *e)
+Status Pop(LinkStack *S, SElemType *e);
+void LinkStackTest();

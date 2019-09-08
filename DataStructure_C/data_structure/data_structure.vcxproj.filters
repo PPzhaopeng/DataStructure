@@ -30,6 +30,15 @@
     <ClCompile Include="LinkStack.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CirSequenceQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CirSequenceQueueApplication.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkList.h">
@@ -38,10 +47,19 @@
     <ClInclude Include="SequenceList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LinkStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CirSequenceQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="SequenceStack.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LinkStack.h">
+    <ClInclude Include="LinkQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CirSequenceQueueApplication.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

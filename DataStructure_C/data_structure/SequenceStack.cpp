@@ -1,5 +1,6 @@
 #include "SequenceStack.h"
-
+#include <iostream>
+using namespace std;
 //插入元素e作为新的栈顶元素
 Status Push(SqStack *S, SElemType e)
 {
@@ -60,4 +61,26 @@ Status SDPop(SqDoubleStack S, SElemType *e, int stackNumber)
 		*e = S.data[S.top2++];/* 先赋值，再--操作 */
 	}
 	return OK;
+}
+
+void SquenceStackTest()
+{
+	SqStack S = { 0,0 };
+
+	printf("进栈：");
+	for (int i = 0; i < 6; i++)
+	{
+		Push(&S, i);
+		printf("%d ", i);
+	}
+
+	printf("\n出栈：");
+	for (int i = 0; i < 6; i++)
+	{
+		int *e = (int *)malloc(sizeof(int));
+		Pop(&S, e);
+		printf("%d ", *e);
+	}
+
+
 }

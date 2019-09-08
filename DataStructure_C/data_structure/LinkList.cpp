@@ -1,7 +1,8 @@
 #include "LinkList.h"
 #include "stdlib.h"
 #include "time.h"
-
+#include <iostream>
+using namespace std;
 /*****************************************************
 获得链表第i个数据的算法思路
 1.声明一个指针p指向指向链表的第一个结点，初始化j从1开始；

@@ -39,6 +39,9 @@
     <ClCompile Include="CirSequenceQueueApplication.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="KMP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkList.h">
@@ -60,6 +63,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="CirSequenceQueueApplication.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KMP.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

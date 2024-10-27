@@ -3,7 +3,7 @@
 #include "SequenceList.h"
 #include "SequenceStack.h"
 #include "LinkStack.h"
-#include "CirSequenceQueueApplication.h"
+#include "Queue/CirSequenceQueueApplication.h"
 
 void main()
 {

@@ -1,14 +1,14 @@
-#pragma once
-#include "CirSequenceQueue.h"
+// #pragma once
+// #include "CirSequenceQueue.h"
 
-typedef struct
-{
+// typedef struct
+// {
 
-	SqQueue Q;	//ͳ���Ŷ�
-	int num;	//ͳ����Ʊ������
-	int num1;   //ͳ����Ʊ������
-}Sale;
+// 	SqQueue Q;	//ͳ���Ŷ�
+// 	int num;	//ͳ����Ʊ������
+// 	int num1;   //ͳ����Ʊ������
+// }Sale;
 
-DWORD WINAPI Consumer(LPVOID lpParamter);
-DWORD WINAPI Producer(LPVOID lpParamter);
-int WindowQueue();
+// DWORD WINAPI Consumer(LPVOID lpParamter);
+// DWORD WINAPI Producer(LPVOID lpParamter);
+// int WindowQueue();

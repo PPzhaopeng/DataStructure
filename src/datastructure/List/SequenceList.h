@@ -1,23 +1,23 @@
 #pragma once
 /*******************************************************
-ÏßĞÔ±íµÄÈı¸öÊôĞÔ£º
-1.´æ´¢¿Õ¼äµÄÆğÊ¼Î»ÖÃ
-2.ÏßĞÔ±íµÄ×î´ó´æ´¢ÄÜÁ¿
-4.ÏßĞÔ±íµÄµ±Ç°³¤¶È
+çº¿æ€§è¡¨çš„ä¸‰ä¸ªå±æ€§ï¼š
+1.å­˜å‚¨ç©ºé—´çš„èµ·å§‹ä½ç½®
+2.çº¿æ€§è¡¨çš„æœ€å¤§å­˜å‚¨èƒ½é‡
+4.çº¿æ€§è¡¨çš„å½“å‰é•¿åº¦
 ********************************************************/
 #define OK 1
 #define ERROR 0
 #define TRUE 1
 #define FALSE 0
 #define MAXSIZE 20
-typedef int Status;//Status Êı¾İÀàĞÍ¸ù¾İÊµ¼ÊÇé¿ö¶ø¶¨£¬ÕâÀï¼ÙÉèÎª int
+typedef int Status;//Status æ•°æ®ç±»å‹æ ¹æ®å®é™…æƒ…å†µè€Œå®šï¼Œè¿™é‡Œå‡è®¾ä¸º int
 
-typedef int ElemType; //ElemType Êı¾İÀàĞÍ¸ù¾İÊµ¼ÊÇé¿ö¶ø¶¨£¬ÕâÀï¼ÙÉèÎª int
+typedef int ElemType; //ElemType æ•°æ®ç±»å‹æ ¹æ®å®é™…æƒ…å†µè€Œå®šï¼Œè¿™é‡Œå‡è®¾ä¸º int
 
 typedef struct 
 {
-	ElemType data[MAXSIZE];	//Êı×é´æ´¢Êı¾İÔªËØ
-	int length;				//ÏßĞÔ±íµ±Ç°³¤¶È
+	ElemType data[MAXSIZE];	//æ•°ç»„å­˜å‚¨æ•°æ®å…ƒç´ 
+	int length;				//çº¿æ€§è¡¨å½“å‰é•¿åº¦
 }SqList;
 
 Status ListInsert(SqList *L, int i, ElemType e);

@@ -1,11 +1,11 @@
 #include "CirSequenceQueue.h"
 
 /***************************************************
-Ñ­»·¶ÓÁÐ Ë³Ðò´æ´¢½á¹¹
-ÃæÁÙ×ÅÊý×é¿ÉÄÜÒç³öµÄÇé¿ö
+å¾ªçŽ¯é˜Ÿåˆ— é¡ºåºå­˜å‚¨ç»“æž„
+é¢ä¸´ç€æ•°ç»„å¯èƒ½æº¢å‡ºçš„æƒ…å†µ
 ***************************************************/
 
-/* ³õÊ¼»¯Ò»¸ö¿Õ¶ÓÁÐQ */
+/* åˆå§‹åŒ–ä¸€ä¸ªç©ºé˜Ÿåˆ—Q */
 Status InitQueue(SqQueue *Q)
 {
 	Q->front = 0;
@@ -13,27 +13,27 @@ Status InitQueue(SqQueue *Q)
 	return OK;
 }
 
-/* ·µ»ØQµÄÔªËØ¸öÊý£¬Ò²¾ÍÊÇ¶ÓÁÐµÄµ±Ç°³¤¶È */
+/* è¿”å›žQçš„å…ƒç´ ä¸ªæ•°ï¼Œä¹Ÿå°±æ˜¯é˜Ÿåˆ—çš„å½“å‰é•¿åº¦ */
 int QueueLength(SqQueue Q)
 {
 	return (Q.rear - Q.front + MAXSIZE) % MAXSIZE;
 }
 
-/* Èô¶ÓÁÐÎ´Âú£¬Ôò²åÈëÔªËØeÎªQÐÂµÄ¶ÓÎ²ÔªËØ */
+/* è‹¥é˜Ÿåˆ—æœªæ»¡ï¼Œåˆ™æ’å…¥å…ƒç´ eä¸ºQæ–°çš„é˜Ÿå°¾å…ƒç´  */
 Status EnQueue(SqQueue *Q, QElemType e)
 {
-	if ((Q->rear + 1) % MAXSIZE == Q->front)//¶ÓÁÐÂúµÄÅÐ¶Ï
+	if ((Q->rear + 1) % MAXSIZE == Q->front)//é˜Ÿåˆ—æ»¡çš„åˆ¤æ–­
 		return ERROR;
 	Q->data[Q->rear] = e;				
-	Q->rear = (Q->rear + 1) % MAXSIZE;	//rearÖ¸ÕëÏòºóÒÆÒ»Î»ÖÃ
+	Q->rear = (Q->rear + 1) % MAXSIZE;	//rearæŒ‡é’ˆå‘åŽç§»ä¸€ä½ç½®
 
 	return OK;
 }
 
-/* Ñ­»·¶ÓÁÐµÄ³ö¶Ó²Ù×÷£¬Èô¶ÓÁÐ²»Îª¿Õ£¬É¾³ýQµÄ¶ÓÍ·ÔªËØ£¬ÓÃe·µ»ØÆäÖµ */
+/* å¾ªçŽ¯é˜Ÿåˆ—çš„å‡ºé˜Ÿæ“ä½œï¼Œè‹¥é˜Ÿåˆ—ä¸ä¸ºç©ºï¼Œåˆ é™¤Qçš„é˜Ÿå¤´å…ƒç´ ï¼Œç”¨eè¿”å›žå…¶å€¼ */
 Status DeQueue(SqQueue *Q, QElemType *e)
 {
-	if (Q->rear == Q->front)//¶ÓÁÐ¿ÕµÄÅÐ¶Ï
+	if (Q->rear == Q->front)//é˜Ÿåˆ—ç©ºçš„åˆ¤æ–­
 		return ERROR;
 	*e = Q->data[Q->front];
 	Q->front = (Q->front + 1) % MAXSIZE;

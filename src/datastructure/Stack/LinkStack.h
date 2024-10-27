@@ -4,19 +4,19 @@
 #define TRUE 1
 #define FALSE 0
 
-typedef int Status;		//Status Êı¾İÀàĞÍ¸ù¾İÊµ¼ÊÇé¿ö¶ø¶¨£¬ÕâÀï¼ÙÉèÎª int
-typedef int SElemType;	//SElemType Êı¾İÀàĞÍ¸ù¾İÊµ¼ÊÇé¿ö¶ø¶¨£¬ÕâÀï¼ÙÉèÎª int
+typedef int Status;		//Status æ•°æ®ç±»å‹æ ¹æ®å®é™…æƒ…å†µè€Œå®šï¼Œè¿™é‡Œå‡è®¾ä¸º int
+typedef int SElemType;	//SElemType æ•°æ®ç±»å‹æ ¹æ®å®é™…æƒ…å†µè€Œå®šï¼Œè¿™é‡Œå‡è®¾ä¸º int
 
 typedef struct StackNode
 {
-	SElemType data;				//Êı¾İ
-	struct StackNode *next;		//ÏÂÒ»¸öÊı¾İµÄµØÖ·
-}StackNode, *LinkStackPtr/*µÈÓÚtypedef struct StackNode *LinkStackPtr*/;
+	SElemType data;				//æ•°æ®
+	struct StackNode *next;		//ä¸‹ä¸€ä¸ªæ•°æ®çš„åœ°å€
+}StackNode, *LinkStackPtr/*ç­‰äºtypedef struct StackNode *LinkStackPtr*/;
 
 typedef struct LinkStack
 {
-	LinkStackPtr top;	//Õ»¶¥Ö¸Õë
-	int count;			//Õ»Éî¶È
+	LinkStackPtr top;	//æ ˆé¡¶æŒ‡é’ˆ
+	int count;			//æ ˆæ·±åº¦
 }LinkStack;
 
 Status StackEmpty(LinkStack S);

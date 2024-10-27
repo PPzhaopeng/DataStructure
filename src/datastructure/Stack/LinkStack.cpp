@@ -10,18 +10,18 @@ Status StackEmpty(LinkStack S)
 	return FALSE;
 }
 
-/* Õ»µÄÁ´Ê½´æ´¢½á¹¹¡ª¡ª½øÕ»  ²åÈëÔªËØeÎªĞÂµÄÕ»¶¥ÔªËØ */
+/* æ ˆçš„é“¾å¼å­˜å‚¨ç»“æ„â€”â€”è¿›æ ˆ  æ’å…¥å…ƒç´ eä¸ºæ–°çš„æ ˆé¡¶å…ƒç´  */
 Status Push(LinkStack *S, SElemType e)
 {
-	LinkStackPtr s = (LinkStackPtr)malloc(sizeof(StackNode));//ÉêÇëĞÂ½áµãÄÚ´æ
-	s->data = e;	//¸³ÖµĞÂ½Úµã
-	s->next = S->top;/* °Ñµ±Ç°Õ»¶¥ÔªËØ¸³Öµ¸øĞÂ½áµãµÄÖ±½Óºó¼Ì */
-	S->top = s;/* ½«ĞÂ½áµãs¸³Öµ¸øÕ»¶¥Ö¸Õë */
+	LinkStackPtr s = (LinkStackPtr)malloc(sizeof(StackNode));//ç”³è¯·æ–°ç»“ç‚¹å†…å­˜
+	s->data = e;	//èµ‹å€¼æ–°èŠ‚ç‚¹
+	s->next = S->top;/* æŠŠå½“å‰æ ˆé¡¶å…ƒç´ èµ‹å€¼ç»™æ–°ç»“ç‚¹çš„ç›´æ¥åç»§ */
+	S->top = s;/* å°†æ–°ç»“ç‚¹sèµ‹å€¼ç»™æ ˆé¡¶æŒ‡é’ˆ */
 	S->count++;
 	return OK;
 }
 
-/* Õ»µÄÁ´Ê½´æ´¢½á¹¹¡ª¡ª³öÕ» */
+/* æ ˆçš„é“¾å¼å­˜å‚¨ç»“æ„â€”â€”å‡ºæ ˆ */
 Status Pop(LinkStack *S, SElemType *e)
 {
 	LinkStackPtr p;
@@ -30,27 +30,27 @@ Status Pop(LinkStack *S, SElemType *e)
 		return ERROR;
 	}
 	*e = S->top->data;
-	p = S->top;				/* ½«Õ»¶¥½áµã¸³Öµ¸øp */
-	S->top = S->top->next;	/* Ê¹µÃÕ»¶¥½áµãÏÂÒÆÒ»Î»£¬Ö¸ÏòºóÒ»½áµã */
-	free(p);/* ÊÍ·Å½áµãp */
+	p = S->top;				/* å°†æ ˆé¡¶ç»“ç‚¹èµ‹å€¼ç»™p */
+	S->top = S->top->next;	/* ä½¿å¾—æ ˆé¡¶ç»“ç‚¹ä¸‹ç§»ä¸€ä½ï¼ŒæŒ‡å‘åä¸€ç»“ç‚¹ */
+	free(p);/* é‡Šæ”¾ç»“ç‚¹p */
 	S->count--;
 	return OK;
 }
 
 void LinkStackTest()
 {
-	LinkStack S = {0,-1};//Õ»Îª¿ÕÊ±£¬³¤¶ÈÎª-1£»
-	printf("ÊÇ·ñÎª¿Õ£º%d", StackEmpty(S)); // 1
+	LinkStack S = {0,-1};//æ ˆä¸ºç©ºæ—¶ï¼Œé•¿åº¦ä¸º-1ï¼›
+	printf("æ˜¯å¦ä¸ºç©ºï¼š%d", StackEmpty(S)); // 1
 
-	printf("\n½øÕ»£º");
+	printf("\nè¿›æ ˆï¼š");
 	for (int i = 0; i < 6; i++)
 	{
 		Push(&S, i);
 		printf("%d ", i);
 	}
-	printf("\nÊÇ·ñÎª¿Õ£º%d", StackEmpty(S));// 0
+	printf("\næ˜¯å¦ä¸ºç©ºï¼š%d", StackEmpty(S));// 0
 
-	printf("\n³öÕ»£º");
+	printf("\nå‡ºæ ˆï¼š");
 	for (int i = 0; i < 3; i++)
 	{
 		int *e = (int *)malloc(sizeof(int));

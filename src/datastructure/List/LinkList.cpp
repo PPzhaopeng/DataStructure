@@ -4,19 +4,19 @@
 #include <iostream>
 using namespace std;
 /*****************************************************
-���������i�����ݵ��㷨˼·
-1.����һ��ָ��pָ��ָ�������ĵ�һ����㣬��ʼ��j��1��ʼ��
-2.��j<iʱ���ͱ�����������p��ָ������ƶ�������ָ����һ����㣬j�ۼ�1
-3.��������ĩβpΪ�գ���˵����i����㲻���ڣ���ע�����������һ�����ָ��NULL��
-4.������ҳɹ������ؽ��p�����ݡ�
+获得链表第i个数据的算法思路
+1.声明一个指针p指向指向链表的第一个结点，初始化j从1开始；
+2.当j<i时，就遍历链表，让p的指针向后移动，不断指向下一个结点，j累加1
+3.若到链表末尾p为空，则说明第i个结点不存在；（注：链表的最后一个结点指向NULL）
+4.否则查找成功，返回结点p的数据。
 ******************************************************/
-/*��ʼ������˳�����Ա�L�Ѵ��ڣ�1<=i<=ListLength(L)*/
-/*�����������e���ص�i������Ԫ�ص�ֵ*/
+/*初始条件：顺序线性表L已存在，1<=i<=ListLength(L)*/
+/*操作结果：用e返回第i个数据元素的值*/
 Status GetElem(LinkList L, int i, ElemType *e)
 {
 	int j;
-	LinkList p;		/*����һ��ָ��p����ָ�����һ�����*/
-	p = L->next;	/*��pָ������L�ĵ�һ���ڵ�*/
+	LinkList p;		/*声明一个指针p，此指针代表一个结点*/
+	p = L->next;	/*让p指向链表L的第一个节点*/
 	j = 1;
 	while (p&&j < i)
 	{
@@ -27,43 +27,43 @@ Status GetElem(LinkList L, int i, ElemType *e)
 	{
 		return ERROR;
 	}
-	*e = p->data;/*ȡ��i��Ԫ�ص�����*/
+	*e = p->data;/*取第i个元素的数据*/
 	return OK;
 }
 
 /*******************************************************
-��������i�����ݲ�������㷨˼·
-1.����һ��ָ��pָ������ͷ��㣬��ʼ��j��1��ʼ��
-2.��j<iʱ���ͱ����б�����p��ָ������ƶ�������ָ����һ��㣬j�ۼ�1��
-3.��������ĩβpΪ�գ���˵����i����㲻����;
-4.������ҳɹ�����ϵͳ������һ���ս��s;
-5.��Ԫ��e��ֵ��s->data;
-6.�������Ĳ����׼���s->next=p->next,p->next=s;
-7.���سɹ���
-ע��LinkList *L Ϊ����ָ�� 
-	�ṹ����ĵ�ַ�ǽṹ��ָ����������Ҫ�Խṹ����в������ݡ�ɾ������
-	�Ȳ�������Ҫʹ�ö���ָ��������ʵ�Σ����޸�ָ���������Ҫ����ָ������ĵ�ַ��
-	int **a; *a�洢**a�ĵ�ַ��a�洢*a�ĵ�ַ
-	�ο���https://blog.csdn.net/oqqHuTu12345678/article/details/60962223
+单链表第i个数据插入结点的算法思路
+1.声明一个指针p指向链表头结点，初始化j从1开始；
+2.当j<i时，就遍历列表，让p的指针向后移动，不断指向下一结点，j累加1；
+3.若到链表末尾p为空，则说明第i个结点不存在;
+4.否则查找成功，在系统中生成一个空结点s;
+5.将元素e赋值给s->data;
+6.单链表的插入标准语句s->next=p->next,p->next=s;
+7.返回成功。
+注：LinkList *L 为二级指针 
+	结构体结点的地址是结构体指针变量，因此要对结构体进行插入数据、删除数据
+	等操作，需要使用二级指针来传递实参，即修改指针变量，需要传递指针变量的地址。
+	int **a; *a存储**a的地址，a存储*a的地址
+	参考：https://blog.csdn.net/oqqHuTu12345678/article/details/60962223
 *********************************************************/
-/*��ʼ������˳�����Ա�L�Ѵ��ڣ�1<=i<=ListLength(L)*/
-/*�����������L�е�i���ڵ�λ��֮ǰ�����µ�����Ԫ��e,L�ĳ��ȼ�1*/
+/*初始条件：顺序线性表L已存在，1<=i<=ListLength(L)*/
+/*操作结果：在L中第i个节点位置之前插入新的数据元素e,L的长度加1*/
 Status ListInsert(LinkList *L, int i, ElemType e)
 {
 	int j;
-	LinkList p, s;	//�ṹ��ָ�����
-	p = *L;			//ָ��pָ������ͷ���
+	LinkList p, s;	//结构体指针变量
+	p = *L;			//指针p指向链表头结点
 	j = 1;
-	while (p&&j < i)//����������Ѱ�ҵ�i-1�����
-	{					//���� i=5
-		p = p->next;    // 1 2 3 4  pָ���4����� 
+	while (p&&j < i)//遍历链表，寻找第i-1个结点
+	{					//假设 i=5
+		p = p->next;    // 1 2 3 4  p指向第4个结点 
 		++j;			// 2 3 4 5
 	}
-	if (!p || j > i)//��i����㲻����
+	if (!p || j > i)//第i个结点不存在
 	{
 		return ERROR;
 	}
-	s = (LinkList)malloc(sizeof(Node));	//�����½ڵ�
+	s = (LinkList)malloc(sizeof(Node));	//生成新节点
 	s->data = e;
 	s->next = p->next;
 	p->next = s;
@@ -72,30 +72,30 @@ Status ListInsert(LinkList *L, int i, ElemType e)
 
 
 /*******************************************************
-��������i������ɾ�������㷨˼·
-1.����һ��ָ��pָ������ͷָ�룬��ʼ��j��1��ʼ��
-2.��j<iʱ���ͱ����б�����p��ָ������ƶ�������ָ����һ��㣬j�ۼ�1��
-3.��������ĩβpΪ�գ���˵����i����㲻����;
-4.������ҳɹ�������ɾ���Ľ��p-next��ֵ��q;
-5.��������ɾ����׼���p->next=q->next;
-6.�ͷ�q���
-7.���سɹ���
-ע����Ҫ�޸�����������Ҫ������ָ�����Ϊ������LinkList *L��
+单链表第i个数据删除结点的算法思路
+1.声明一个指针p指向链表头指针，初始化j从1开始；
+2.当j<i时，就遍历列表，让p的指针向后移动，不断指向下一结点，j累加1；
+3.若到链表末尾p为空，则说明第i个结点不存在;
+4.否则查找成功，将欲删除的结点p-next赋值给q;
+5.单链表的删除标准语句p->next=q->next;
+6.释放q结点
+7.返回成功。
+注：需要修改链表，故需要以链表指针变量为参数（LinkList *L）
 *********************************************************/
-/*��ʼ������˳�����Ա�L�Ѵ��ڣ�1<=i<=ListLength(L)*/
-/*�����������L�е�i���ڵ�λ��֮ǰ�����µ�����Ԫ��e,L�ĳ��ȼ�1*/
+/*初始条件：顺序线性表L已存在，1<=i<=ListLength(L)*/
+/*操作结果：在L中第i个节点位置之前插入新的数据元素e,L的长度加1*/
 Status ListDelete(LinkList *L, int i, ElemType *e)
 {
 	int j;
 	LinkList p, q;
-	p = *L; //ָ��pָ������ͷָ��
+	p = *L; //指针p指向链表头指针
 	j = 1;
-	while (p->next && j < i) //����������Ѱ�ҵ�i-1�����
-	{					//���� i=5
-		p = p->next;    // 1 2 3 4  pָ���4����� 
+	while (p->next && j < i) //遍历链表，寻找第i-1个结点
+	{					//假设 i=5
+		p = p->next;    // 1 2 3 4  p指向第4个结点 
 		++j;			// 2 3 4 5
 	}
-	if (!(p->next) || j > i)//��i����㲻����
+	if (!(p->next) || j > i)//第i个结点不存在
 	{
 		return ERROR;
 	}
@@ -107,22 +107,22 @@ Status ListDelete(LinkList *L, int i, ElemType *e)
 }
 
 /************************************
-����������������-(ͷ�鷨)
-�㷨˼·��
-1.����һ��ָ��p�ͼ���������i
-2.��ʼ��һ��������L;
-3.��L��ͷ����ָ��ָ��NULL��������һ����ͷ���ĵ�����
-4.ѭ��
-	# ����һ���½�㸳ֵ��p
-	# �������һ�����ָ�ֵ��p��������p->data
-	# ��p���뵽ͷ�����ǰһ�½��֮�䡣
+单链表的整表创建-(头查法)
+算法思路：
+1.声明一个指针p和计数器变量i
+2.初始化一个空链表L;
+3.让L的头结点的指针指向NULL，即建立一个带头结点的单链表
+4.循环
+	# 生成一个新结点赋值给p
+	# 随机生成一个数字赋值给p的数据域p->data
+	# 将p插入到头结点与前一新结点之间。
 *************************************/
-/*�������n��Ԫ�ص�ֵ��������ͷ�ڵ�ĵ�����L */
+/*随机产生n个元素的值，建立带头节点的单链表L */
 void CreateListHead(LinkList *L, int n)
 {
-	LinkList p;//����һ��ָ�����p
+	LinkList p;//声明一个指针变量p
 	int i;
-	srand(time(0));//��ʼ���������
+	srand(time(0));//初始化随机种子
 	*L = (LinkList)malloc(sizeof(Node));
 	(*L)->next = NULL;
 	for (i = 0; i < n; i++)
@@ -135,17 +135,17 @@ void CreateListHead(LinkList *L, int n)
 }
 
 /************************************
-����������������-(β�鷨)
-�㷨˼·��
-1.����һ��ָ��p,һ��ָ��r�ͼ���������i
-2.��ʼ��һ��������L;
-3.��rָ��ָ��L��ͷ���
-4.ѭ��
-	# ����һ���½�㸳ֵ��p
-	# �������һ�����ָ�ֵ��p��������p->data
-	# ��p���뵽ǰһ�½��ĺ��档
+单链表的整表创建-(尾查法)
+算法思路：
+1.声明一个指针p,一个指针r和计数器变量i
+2.初始化一个空链表L;
+3.让r指针指向L的头结点
+4.循环
+	# 生成一个新结点赋值给p
+	# 随机生成一个数字赋值给p的数据域p->data
+	# 将p插入到前一新结点的后面。
 *************************************/
-/*�������n��Ԫ�ص�ֵ��������ͷ�ڵ�ĵ�����L��β�巨��*/
+/*随机产生n个元素的值，建立带头节点的单链表L（尾插法）*/
 void CreateListTail(LinkList *L, int n)
 {
 	LinkList p, r;
@@ -164,16 +164,16 @@ void CreateListTail(LinkList *L, int n)
 }
 
 /************************************
-������������ɾ�������ͷ��ڴ�
-�㷨˼·��
-1.����һ���p��q
-2.����һ����㸳ֵ��p
-3.ѭ��
-	# ����һ��㸳ֵ��q
-	# �ͷ�p
-	# ��q��ֵ��p
+单链表的整表删除，即释放内存
+算法思路：
+1.声明一结点p和q
+2.将第一个结点赋值给p
+3.循环
+	# 将下一结点赋值给q
+	# 释放p
+	# 将q赋值给p
 *************************************/
-/*��ʼ��������ʽ���Ա�L�Ѵ���,�����������L����Ϊ�ձ�*/
+/*初始条件：链式线性表L已存在,操作结果：将L重置为空表*/
 Status ClearList(LinkList *L)
 {
 	LinkList p, q;
@@ -188,16 +188,16 @@ Status ClearList(LinkList *L)
 	return OK;
 }
 
-//ʹ�õ���������һ�����Ա�����������ʮ��0-99֮����������
-//ɾ����5��Ԫ�أ���ӡ��������Ա���
+//使用单链表建立一个线性表，依次输入十个0-99之间的随机数，
+//删除第5个元素，打印输出该线性表。
 void LinkListTest()
 {
-	LinkList L = NULL;// L ָ�����
+	LinkList L = NULL;// L 指针变量
 	const int len = 10;
-	CreateListHead(&L, len); //����һ��ӵ��10���������Ա�,����&LΪָ������ĵ�ַ������ָ�룩
+	CreateListHead(&L, len); //建立一个拥有10个结点的线性表,其中&L为指针变量的地址（二级指针）
 	int *e = (int *)malloc(sizeof(int));
-	LinkList p;		//����ָ�����p
-	p = L->next;	//ָ�����pָ������ͷ���
+	LinkList p;		//定义指针变量p
+	p = L->next;	//指针变量p指向链表头结点
 	while (p)
 	{
 		cout << p->data << " ";
@@ -207,7 +207,7 @@ void LinkListTest()
 
 	ListDelete(&L, 5, e);
 	ListInsert(&L, 1, 100);
-	p = L->next;	//ָ�����pָ������ͷ���
+	p = L->next;	//指针变量p指向链表头结点
 	while (p)
 	{
 		cout << p->data << " ";

@@ -1,10 +1,10 @@
 #include "SequenceStack.h"
 #include <iostream>
 using namespace std;
-//²åÈëÔªËØe×÷ÎªĞÂµÄÕ»¶¥ÔªËØ
+//æ’å…¥å…ƒç´ eä½œä¸ºæ–°çš„æ ˆé¡¶å…ƒç´ 
 Status Push(SqStack *S, SElemType e)
 {
-	if (S->top == MAXSIZE - 1)//Õ»Âú
+	if (S->top == MAXSIZE - 1)//æ ˆæ»¡
 	{
 		return ERROR;
 	}
@@ -13,7 +13,7 @@ Status Push(SqStack *S, SElemType e)
 	return OK;
 }
 
-//³öÕ»²Ù×÷
+//å‡ºæ ˆæ“ä½œ
 Status Pop(SqStack *S, SElemType *e)
 {
 	if (S->top == -1)
@@ -25,23 +25,23 @@ Status Pop(SqStack *S, SElemType *e)
 	return OK;
 }
 
-/* /Á½Õ»¹²Ïí¿Õ¼ä½øÕ»£¬²åÈëÔªËØeÎªÕ»¶¥ÔªËØ */
+/* /ä¸¤æ ˆå…±äº«ç©ºé—´è¿›æ ˆï¼Œæ’å…¥å…ƒç´ eä¸ºæ ˆé¡¶å…ƒç´  */
 Status SDPush(SqDoubleStack *S, SElemType e, int stackNumber)
 {
-	if (S->top1 + 1 == S->top2)/* Õ»ÒÑÂú */
+	if (S->top1 + 1 == S->top2)/* æ ˆå·²æ»¡ */
 	{
 		return ERROR;
 	}
-	if (stackNumber == 1)/* Õ»1ÓĞÔªËØ½øÕ» */
+	if (stackNumber == 1)/* æ ˆ1æœ‰å…ƒç´ è¿›æ ˆ */
 	{
-		S->data[++S->top1] = e;/* ÏÈ++²Ù×÷£¬ÔÙ¸³Öµ */
+		S->data[++S->top1] = e;/* å…ˆ++æ“ä½œï¼Œå†èµ‹å€¼ */
 	}
-	else if (stackNumber == 2)/* Õ»2ÓĞÔªËØ½øÕ» */
+	else if (stackNumber == 2)/* æ ˆ2æœ‰å…ƒç´ è¿›æ ˆ */
 	{
 		S->data[--S->top2] = e;
 	}
 }
-/* Á½Õ»¹²Ïí¿Õ¼ä³öÕ» */
+/* ä¸¤æ ˆå…±äº«ç©ºé—´å‡ºæ ˆ */
 Status SDPop(SqDoubleStack S, SElemType *e, int stackNumber)
 {
 	if (stackNumber == 1)
@@ -50,7 +50,7 @@ Status SDPop(SqDoubleStack S, SElemType *e, int stackNumber)
 		{
 			return ERROR;
 		}
-		*e = S.data[S.top1--];/* ÏÈ¸³Öµ£¬ÔÙ--²Ù×÷ */
+		*e = S.data[S.top1--];/* å…ˆèµ‹å€¼ï¼Œå†--æ“ä½œ */
 	}
 	else if (stackNumber == 2)
 	{
@@ -58,7 +58,7 @@ Status SDPop(SqDoubleStack S, SElemType *e, int stackNumber)
 		{
 			return ERROR;
 		}
-		*e = S.data[S.top2++];/* ÏÈ¸³Öµ£¬ÔÙ--²Ù×÷ */
+		*e = S.data[S.top2++];/* å…ˆèµ‹å€¼ï¼Œå†--æ“ä½œ */
 	}
 	return OK;
 }
@@ -67,14 +67,14 @@ void SquenceStackTest()
 {
 	SqStack S = { 0,0 };
 
-	printf("½øÕ»£º");
+	printf("è¿›æ ˆï¼š");
 	for (int i = 0; i < 6; i++)
 	{
 		Push(&S, i);
 		printf("%d ", i);
 	}
 
-	printf("\n³öÕ»£º");
+	printf("\nå‡ºæ ˆï¼š");
 	for (int i = 0; i < 6; i++)
 	{
 		int *e = (int *)malloc(sizeof(int));

@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
-//»ñµÃÊı¾İÔªËØ²Ù×÷
+//è·å¾—æ•°æ®å…ƒç´ æ“ä½œ
 Status GetElm(SqList L, int i, ElemType *e)
 {
-	if (L.length == 0 || i<1 || i>L.length)//Òì³£¼ì²â
+	if (L.length == 0 || i<1 || i>L.length)//å¼‚å¸¸æ£€æµ‹
 	{
 		return ERROR;
 	}
@@ -13,14 +13,14 @@ Status GetElm(SqList L, int i, ElemType *e)
 	return OK;
 }
 
-//²åÈë²Ù×÷
+//æ’å…¥æ“ä½œ
 Status ListInsert(SqList *L, int i, ElemType e)
 {
 	if (L->length == MAXSIZE)
 		return ERROR;
 	if (i<1 || i>L->length + 1)
 		return ERROR;
-	if (i <= L->length)//Èô²åÈëµÄÊı¾İ²»ÔÚ±íÎ²
+	if (i <= L->length)//è‹¥æ’å…¥çš„æ•°æ®ä¸åœ¨è¡¨å°¾
 	{
 		for (int k = L->length - 1; k >= i - 1; k--)
 		{
@@ -32,7 +32,7 @@ Status ListInsert(SqList *L, int i, ElemType e)
 	return OK;
 }
 
-//É¾³ı²Ù×÷
+//åˆ é™¤æ“ä½œ
 Status ListDelete(SqList *L, int i, ElemType *e)
 {
 	if (L->length == MAXSIZE)
@@ -55,7 +55,7 @@ Status ListDelete(SqList *L, int i, ElemType *e)
 
 void SequenceListTest()
 {
-	SqList L = { 0,0 };//½á¹¹ÌåÊı×é³õÊ¼»¯
+	SqList L = { 0,0 };//ç»“æ„ä½“æ•°ç»„åˆå§‹åŒ–
 
 	for (int i = 1; i < 5; i++)
 	{

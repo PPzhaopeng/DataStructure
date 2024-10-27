@@ -4,21 +4,21 @@
 #define TRUE 1
 #define FALSE 0
 #define MAXSIZE 20
-typedef int Status;//Status 数据类型根据实际情况而定，这里假设为 int
+typedef int Status;//Status 鏁版嵁绫诲瀷鏍规嵁瀹為檯鎯呭喌鑰屽畾锛岃繖閲屽亣璁句负 int
 
-typedef int SElemType; //SElemType 数据类型根据实际情况而定，这里假设为 int
+typedef int SElemType; //SElemType 鏁版嵁绫诲瀷鏍规嵁瀹為檯鎯呭喌鑰屽畾锛岃繖閲屽亣璁句负 int
 typedef struct 
 {
 	SElemType data[MAXSIZE];
-	int top;	//用于栈顶指针
+	int top;	//鐢ㄤ簬鏍堥《鎸囬拡
 }SqStack;
 
 Status Push(SqStack *S, SElemType e);
 Status Pop(SqStack *S, SElemType *e);
 void SquenceStackTest();
 
-/* 两栈共享空间结构 */
-//主要用于两个栈的空间需求有相反的关系，也就是一个栈增长，另一个会减小
+/* 涓ゆ爤鍏变韩绌洪棿缁撴瀯 */
+//涓昏鐢ㄤ簬涓や釜鏍堢殑绌洪棿闇�姹傛湁鐩稿弽鐨勫叧绯伙紝涔熷氨鏄竴涓爤澧為暱锛屽彟涓�涓細鍑忓皬
 typedef struct
 {
 	SElemType data[MAXSIZE];

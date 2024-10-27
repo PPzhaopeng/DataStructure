@@ -1,13 +1,12 @@
 #pragma once
-#include <windows.h>
 #include "CirSequenceQueue.h"
 
 typedef struct
 {
 
-	SqQueue Q;	//统计排队
-	int num;	//统计买票的数量
-	int num1;   //统计卖票的数量
+	SqQueue Q;	//统锟斤拷锟脚讹拷
+	int num;	//统锟斤拷锟斤拷票锟斤拷锟斤拷锟斤拷
+	int num1;   //统锟斤拷锟斤拷票锟斤拷锟斤拷锟斤拷
 }Sale;
 
 DWORD WINAPI Consumer(LPVOID lpParamter);
